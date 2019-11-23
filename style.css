@@ -1,7 +1,7 @@
 body {
   margin: 0;
 
-  background-color: #ffffff;
+  background: #beffe4;
   padding: 0;
   color: #000000;
 
@@ -59,7 +59,6 @@ tr {
 
 .main {
   width: 100%;
-  background-image: linear-gradient(to top, #F0FFF0 20%, #E4E4D8 50%, #A19887 80%);
 }
 
 .main__wrapper {
@@ -112,12 +111,22 @@ tr {
   border: none;
   cursor: pointer;
   border-radius: 10px;
+  position: relative;
+}
+
+.main__button:hover {
+  opacity: 0.5;
+}
+
+.main__button:active {
+  opacity: 0.3;
 }
 
 .main__head {
   width: 193px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 5px;
   text-align: left;
   vertical-align: middle;
 }
@@ -133,7 +142,16 @@ tr {
 .main__filling {
   background-color: inherit;
   border: none;
-  width: 193px;
+  width: 188px;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.main__filling:hover {
+  border-bottom: 1px solid #26a69a;
+}
+
+.main__filling--border {
+  border-bottom: none;
 }
 
 .main__table td {
@@ -142,8 +160,77 @@ tr {
   padding-bottom: 10px;
   text-align: left;
   vertical-align: middle;
+  padding-right: 5px;
 }
 
 .main__option {
   background-color: #F0FFF0;
 }
+
+.main__button--plus::before {
+  display: block;
+  position: absolute;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #000000;
+  top: 15px;
+  left: 14px;
+}
+
+.main__button--plus::after {
+  display: block;
+  position: absolute;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  content: "";
+  width: 2px;
+  height: 18px;
+  background-color: #000000;
+  top: 7px;
+  left: 23px;
+}
+
+.main__button--delete::before {
+  display: block;
+  position: absolute;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #000000;
+  top: 15px;
+  left: 14px;
+}
+
+.main__button--up::before {
+  display: block;
+  position: absolute;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  content: "";
+  top: 0;
+  left: 14px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #000000;
+}
+
+.main__button--down::before {
+  display: block;
+  position: absolute;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 10px;
+  left: 14px;
+  border: 10px solid transparent;
+  border-top: 10px solid #000000;
+}
+

@@ -39,7 +39,7 @@ const app = new Vue({
         cost: ""
       };
     },
-    deleteLine: (cmd, elem) => {
+    moveLine: (cmd, elem) => {
       let index = -1;
       for (let i = 0; i < data.table.length; i++) {
         if (data.table[i].name == elem.name) {
@@ -53,14 +53,6 @@ const app = new Vue({
             }
             break;
         }
-        // case 'up': {
-
-        //     break;
-        // }
-        // case 'down': {
-
-        //     break;
-        // }
     };
       app.getSumm();
     },
