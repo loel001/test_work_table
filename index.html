@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Тестовое задание</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <section class="main">
+    <div class="main__wrapper" id="app">
+      <h1 class="main__title">Тестовое задание</h1>
+      <table class="main__table">
+        <thead>
+          <tr class="main__line">
+            <th class="main__head">Название</th>
+            <th class="main__head">Тип</th>
+            <th class="main__head">Единица</th>
+            <th class="main__head">Количество</th>
+            <th class="main__head">Стоимость</th>
+            <th class="main__head">Навигация</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="main__line" v-for="entry in table">
+            <td>
+              {{ entry.name }}
+            </td>
+            <td>
+              {{ entry.type }}
+            </td>
+            <td>
+              {{ entry.unit }}
+            </td>
+            <td>
+              {{ entry.count }}
+            </td>
+            <td>
+              {{ entry.cost }}
+            </td>
+            <td>
+              <button class="main__button" type="button" v-on:click="moveLine('del', entry)">
+                Удалить строку
+              </button>
+              <button class="main__button" type="button" v-on:click="moveLine('up', entry)">
+                Переместить строку выше
+              </button>
+              <button class="main__button" type="button">
+                Переместить строку ниже
+              </button>
+            </td>
+          </tr>
+          <tr class="main__line">
+            <td>
+              <input class="main__filling" name="title" id="title" type="text" minlength="1" placeholder="Уникальный текст" required v-model="newEntry.name">
+              <label class="visually-hidden" for="title">Введите название</label>
+            </td>
+            <td>
+              <input class="main__filling" name="type" id="type" type="text" v-model="newEntry.type">
+              <label class="visually-hidden" for="type">Введите тип</label>
+            </td>
+            <td>
+              <select class="main__filling" name="unit" v-model="newEntry.unit">
+                <option class="main__option" value="Час" selected>Час</option>
+                <option class="main__option" value="Шт">Шт</option>
+              </select>
+            </td>
+            <td>
+              <input class="main__filling" name="quantity" id="quantity" type="number" v-model="newEntry.count">
+              <label class="visually-hidden" for="quantity">Введите количество</label>
+            </td>
+            <td>
+              <input class="main__filling" name="price" id="price" type="number" min="1" placeholder="Больше 0" v-model="newEntry.cost">
+              <label class="visually-hidden" for="price">Введите стоимость</label>
+            </td>
+            <td>
+              <button class="main__button" type="button" v-on:click="addLine">Добавить</button>
+            </td>
+          </tr>
+          <tr class="main__line main__line--summ">
+            <td>Сумма</td>
+            <td>
+              {{ summ }}
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>
