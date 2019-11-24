@@ -5,7 +5,7 @@ body {
   padding: 0;
   color: #000000;
 
-  font-family: "Arial", sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 20px;
   font-weight: 400;
 }
@@ -74,7 +74,7 @@ tr {
 }
 
 .main__title {
-  font-family: "Arial", sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 30px;
   font-weight: 400;
   color: #000000;
@@ -84,7 +84,7 @@ tr {
 }
 
 .main__table {
-  font-family: "Arial", sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 20px;
   color: #000000;
   width: 1160px;
@@ -173,11 +173,11 @@ tr {
   background-position: 0 0;
   background-repeat: no-repeat;
   content: "";
-  width: 20px;
+  width: 18px;
   height: 2px;
-  background-color: #000000;
+  background-color: #c6ebde;
   top: 15px;
-  left: 14px;
+  left: 16px;
 }
 
 .main__button--plus::after {
@@ -187,10 +187,10 @@ tr {
   background-repeat: no-repeat;
   content: "";
   width: 2px;
-  height: 18px;
-  background-color: #000000;
-  top: 7px;
-  left: 23px;
+  height: 16px;
+  background-color: #c6ebde;
+  top: 8px;
+  left: 24px;
 }
 
 .main__button--delete::before {
@@ -199,11 +199,11 @@ tr {
   background-position: 0 0;
   background-repeat: no-repeat;
   content: "";
-  width: 20px;
+  width: 18px;
   height: 2px;
-  background-color: #000000;
+  background-color: #c6ebde;
   top: 15px;
-  left: 14px;
+  left: 16px;
 }
 
 .main__button--up::before {
@@ -213,11 +213,11 @@ tr {
   background-repeat: no-repeat;
   content: "";
   top: 0;
-  left: 14px;
+  left: 16px;
   width: 0;
   height: 0;
-  border: 10px solid transparent;
-  border-bottom: 10px solid #000000;
+  border: 8px solid transparent;
+  border-bottom: 10px solid #c6ebde;
 }
 
 .main__button--down::before {
@@ -229,8 +229,18 @@ tr {
   width: 0;
   height: 0;
   top: 10px;
-  left: 14px;
-  border: 10px solid transparent;
-  border-top: 10px solid #000000;
+  left: 16px;
+  border: 8px solid transparent;
+  border-top: 10px solid #c6ebde;
+}
+
+.main__filling--error {
+  background-color: #FA8072;
+  border-radius: 10px;
+}
+
+.main__filling--color {
+  background-color: #FA8072;
+  border-radius: 10px;
 }
 

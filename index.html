@@ -17,11 +17,11 @@
       <table class="main__table">
         <thead>
           <tr class="main__line">
-            <th class="main__head">Название</th>
-            <th class="main__head">Тип</th>
-            <th class="main__head">Единица</th>
-            <th class="main__head">Количество</th>
-            <th class="main__head">Стоимость</th>
+            <th class="main__head" v-on:click="doSort('name')">Название</th>
+            <th class="main__head" v-on:click="doSort('type')">Тип</th>
+            <th class="main__head" v-on:click="doSort('unit')">Единица</th>
+            <th class="main__head" v-on:click="doSort('count')">Количество</th>
+            <th class="main__head" v-on:click="doSort('cost')">Стоимость</th>
             <th class="main__head">Навигация</th>
           </tr>
         </thead>
@@ -46,17 +46,17 @@
               <button class="main__button main__button--delete" type="button" v-on:click="moveLine('del', entry)">
                 Удалить строку
               </button>
-              <button class="main__button main__button--up" type="button">
+              <button class="main__button main__button--up" type="button" v-on:click="moveLine('up', entry)">
                 Переместить строку выше
               </button>
-              <button class="main__button main__button--down" type="button">
+              <button class="main__button main__button--down" type="button" v-on:click="moveLine('down', entry)">
                 Переместить строку ниже
               </button>
             </td>
           </tr>
           <tr class="main__line">
             <td>
-              <input class="main__filling" name="title" id="title" type="text" minlength="1" placeholder="Уникальный текст" required v-model="newEntry.name">
+              <input class="main__filling" name="title" id="title" type="text" minlength="1" placeholder="Уникальный текст" required v-model="newEntry.name" v-bind:class="{ 'main__filling--error': errorName }">
               <label class="visually-hidden" for="title">Введите название</label>
             </td>
             <td>
@@ -74,7 +74,7 @@
               <label class="visually-hidden" for="quantity">Введите количество</label>
             </td>
             <td>
-              <input class="main__filling" name="price" id="price" type="number" min="1" placeholder="Больше 0" v-model="newEntry.cost">
+              <input class="main__filling" name="price" id="price" type="number" min="1" placeholder="Больше 0" v-model="newEntry.cost" v-bind:class="{ 'main__filling--color': errorCost }">
               <label class="visually-hidden" for="price">Введите стоимость</label>
             </td>
             <td>
